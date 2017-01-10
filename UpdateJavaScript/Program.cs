@@ -57,9 +57,9 @@ namespace UpdateJavaScript
             }
 
             if (sbFail.Length == 0)
-                Console.WriteLine("成功，共替换" + count + "个函数");
+                Console.WriteLine("Update JavaScript OK，" + count + " functions replaced");
             else
-                Console.WriteLine("失败");
+                Console.WriteLine("Update JavaScript Failed.");
         }
 
         static void Main(string[] args)
