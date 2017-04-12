@@ -1,0 +1,23 @@
+{
+  "computers": 
+    [
+      {
+        "name": "wdj.1",
+        "url": "http://120.76.158.251:3344/",
+        "cntr": true,
+        "serverNames": ["srv1","srv2","srv3","srv4"]
+      },
+      {
+        "name": "wdj.2",
+        "url": "http://120.76.210.144:3344/",
+        "cntr": false,
+        "serverNames": ["srv5","srv6","srv7"]
+      },
+      {
+        "name": "wdj.3",
+        "url": "http://120.77.23.186:3344/",
+        "cntr": false,
+        "serverNames": ["srv8","srv9","srv10","srv11","srv12"]
+      }
+    ]
+}

@@ -1,0 +1,25 @@
+Table:CsvArmyGroupActiveTask,,,,,,
+tid,item_name:s,show_order,type:ArmyGroupActiveTaskType,count,credits,icon:s
+#,名字,显示排序,任务类型,完成数量,所得活跃,图标路径
+1,攻击军团boss3次,1,攻击军团boss,3,10,ArmyGroup/rcrw_shijieboss
+2,军团捐献1次,2,军团捐献,1,10,ArmyGroup/juntuanhuiji
+3,英雄培养2次,3,英雄培养,2,10,ArmyGroup/rcrw_yingxiong
+4,挑战特殊副本1次,4,挑战特殊副本,1,10,ArmyGroup/zhengzhan_tiaozhan_01
+5,领取vip奖励1次,5,领取vip奖励,1,10,ArmyGroup/viplibao
+6,购买体力丹1次,8,购买体力丹,1,10,ArmyGroup/tilidan
+7,购买精力丹1次,10,购买精力丹,1,10,ArmyGroup/jinglidan
+8,吃大烤鸡1次,6,吃大烤鸡,1,10,ArmyGroup/kaoanchun
+9,购买竞技场挑战次数1次,9,购买竞技场挑战次数,1,10,ArmyGroup/rcrw_jingjichang
+10,占星5次,7,占星,5,10,ArmyGroup/xzxt_zhanxing_01
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+Table:CsvArmyGroupActiveBoxAward,,,,,,
+tid,item_name:s,credits,awardid,,,
+#,名字,积分数,drop_mgr的id,,,
+1,10 积分奖励,10,2001,,,
+2,40 积分奖励,40,2002,,,
+3,70 积分奖励,70,2003,,,
+4,100 积分奖励,100,2004,,,

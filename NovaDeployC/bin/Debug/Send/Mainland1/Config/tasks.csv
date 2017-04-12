@@ -1,0 +1,40 @@
+﻿Table:CsvTask,,,,,,,,,,,,,,,,
+tid,name:s,get_condition:TaskGetCondition,condition_p,desc_acceptable:s,get_way:TaskGetWay,way_p,get_drama,desc_accepted:s,finish_type:TaskFinishType,finish_p,finish_p2,desc_finished:s,submit_type:TaskSubmitType,submit_p,submit_drama,award
+#,任务名称,获取条件,获取条件参数,任务可接时的描述,获取方式,获取方式参数,接任务对话,已接未完成描述,完成方式,完成方式参数,完成方式参数2,完成任务后的描述,任务提交方式,提交方式参数,提交任务对话,奖励 ID
+1,<color=#FFFF00>英雄的召唤</color>,无,,,根据等级自动,1,,"<color=#00ff00>前往<npc=1,达拉然>，参加英雄的试炼。</color>",对话NPC,1,10,,自动提交,,,101
+2,<color=#FFFF00>清除狗头人</color>,前置任务,1,"前往拜见<npc=5,山丘之王>",找NPC,5,11,"前往<conquer=10101,北郡>寻找<color=#00ff00>狗头人营地</color>",征战,10101,1,"<color=#00ff00>回去找<npc=5,山丘之王>复命 </color>",找NPC提交,5,12,102
+3,<color=#FFFF00>山中的群狼</color>,无,,,根据其它任务自动,2,,"前往<conquer=10102,北郡山谷>搜集<color=#00ff00>森林狼的毛皮</color>",征战,10102,1,"<color=#00ff00>找 <npc=5,山丘之王> 复命 </color>",找NPC提交,5,13,103
+4,<color=#FFFF00>消灭狼群</color>,无,,,根据其它任务自动,3,,"把森林狼的毛皮交给<npc=6,荆棘谷猎手>",对话NPC,6,14,,自动提交,,,104
+5,<color=#FFFF00>身边的威胁</color>,无,,,根据其它任务自动,4,,"领取<npc=1,摄政王>后续的任务",对话NPC,1,15,,自动提交,,,105
+6,<color=#FFFF00>回音山清剿</color>,无,,,根据其它任务自动,5,,"前往北郡的<conquer=10103,回音山矿洞>消灭一些<color=#00ff00>狗头人矿工</color>",征战,10103,1,"<color=#00ff00>回去找<npc=1,摄政王>复命</color>",找NPC提交,1,16,106
+7,<color=#FFFF00>米莉的葡萄</color>,无,,,根据其它任务自动,6,,"前往北郡的<conquer=10104,米莉的葡萄园>驱逐<color=#00ff00>迪菲亚盗贼</color>",征战,10104,1,"<color=#00ff00>找<npc=1,摄政王>复命 </color>",找NPC提交,1,17,107
+8,<color=#FFFF00>加瑞克的赏金</color>,无,,,根据其它任务自动,7,,"前往<color=#00ff00>北郡</color>带<conquer=10105,加瑞克>的徽记回来。",征战,10105,1,"<color=#00ff00>找<npc=1,摄政王>复命 </color>",找NPC提交,1,18,108
+9,<color=#FFFF00>闪金镇之旅</color>,前置任务,8,,根据其它任务自动,8,,"<color=#00ff00>找<npc=2,大法师>谈谈。</color>",对话NPC,2,19,,自动提交,,,109
+10,<color=#FFFF00>悬赏鱼人</color>,无,,,根据其它任务自动,9,,"去<conquer=10201,石碑湖>，消灭鱼人",征战,10201,1,"<color=#00ff00>找<npc=2,大法师>复命 </color>",找NPC提交,2,20,110
+11,<color=#FFFF00>收集木材</color>,前置任务,10,"找到<color=#00ff00><npc=3,牛头人酋长></color>",找NPC,3,21,"前往<color=#00ff00>东谷伐木场</color>收集<conquer=10202,木材>",征战,10202,1,"<color=#00ff00>把木材送给<npc=3,牛头人酋长> </color>",找NPC提交,3,22,111
+12,<color=#FFFF00>觐见女王</color>,前置任务,11,,根据其它任务自动,11,,"<color=#00ff00>找到<npc=4,黑暗游侠></color>",对话NPC,4,23,,自动提交,,,112
+13,<color=#FFFF00>公主必须死</color>,无,,,根据其它任务自动,12,,"杀了<color=#00ff00>南瓜田的<conquer=10203,公主></color>",征战,10203,1,"<color=#00ff00>回去找<npc=4,黑暗游侠> 复命</color>",找NPC提交,4,24,113
+14,<color=#FFFF00>通缉：霍格！</color>,无,,,根据其它任务自动,13,,"消灭<color=#00ff00>林间空地的<conquer=10206,霍格></color>",征战,10206,1,"<color=#00ff00>找<npc=2,大法师>复命 </color>",找NPC提交,2,25,114
+15,<color=#FFFF00>正义的复仇</color>,无,,,根据其它任务自动,14,,"干掉<color=#00ff00>岸边的威胁<conquer=10303,老瞎眼></color>",征战,10303,1,"<color=#00ff00>找<npc=2,大法师>复命 </color>",找NPC提交,2,26,115
+16,<color=#FFFF00>迪菲亚的末日</color>,无,,,根据其它任务自动,15,,"拦截<color=#00ff00>月溪镇的<conquer=10307,迪菲亚信使></color>",征战,10307,1,"<color=#00ff00>找<npc=2,大法师>复命 </color>",找NPC提交,2,27,116
+17,<color=#FFFF00>死矿</color>,无,,,根据其它任务自动,16,,"通关<dungeon=20101,死矿>",战役,20105,1,"<color=#00ff00>回去找<npc=2,大法师>复命 </color>",找NPC提交,2,28,117
+18,<color=#FFFF00>焚木村的毁灭</color>,无,,,根据其它任务自动,17,,"烧毁<color=#00ff00>焚木村的<conquer=10410,一切></color>",征战,10410,1,"<color=#00ff00>找<npc=4,黑暗游侠>复命 </color>",找NPC提交,4,29,118
+19,<color=#FFFF00>埃瑟里克斯</color>,无,,,根据其它任务自动,18,,"干掉<color=#00ff00>奥萨拉克斯之塔<conquer=10510,埃瑟里克斯纳拉辛></color>",征战,10510,1,"<color=#00ff00>找<npc=2,大法师>复命 </color>",找NPC提交,2,30,119
+20,<color=#FFFF00>人马无双</color>,无,,,根据其它任务自动,19,,"消灭<color=#00ff00>北贫瘠的<conquer=10610,督军克罗姆扎></color>",征战,10610,1,"<color=#00ff00>找<npc=3,牛头人酋长>复命 </color>",找NPC提交,3,31,120
+21,<color=#FFFF00>萨瑞尔祖恩</color>,无,,,根据其它任务自动,20,,"消灭<color=#00ff00>石堡的<conquer=10710,萨瑞尔祖恩></color>",征战,10710,1,"<color=#00ff00>找<npc=1,摄政王>复命 </color>",找NPC提交,1,32,121
+22,<color=#FFFF00>鞭笞者沃尔沙</color>,无,,,根据其它任务自动,21,,"干掉<color=#00ff00>灰谷森林的<conquer=10810,鞭笞者沃尔沙></color>",征战,10810,1,"<color=#00ff00>找<npc=2,大法师>复命 </color>",找NPC提交,2,33,122
+23,<color=#FFFF00>海中的鱼人</color>,无,,,根据其它任务自动,22,,"消灭<color=#00ff00>湿地的<conquer=10910,鱼人></color>",征战,10910,1,"<color=#00ff00>找<npc=1,摄政王>复命 </color>",找NPC提交,1,34,123
+24,<color=#FFFF00>血色十字军</color>,无,,,根据其它任务自动,23,,"消灭<color=#00ff00>法奥之墓的<conquer=11010,血色十字军></color>",征战,11010,1,"<color=#00ff00>找<npc=4,黑暗游侠>复命 </color>",找NPC提交,4,35,124
+25,<color=#FFFF00>霜喉雪人</color>,无,,,根据其它任务自动,24,,"干掉<color=#00ff00>希尔斯布莱德的<conquer=11110,霜喉雪人></color>",征战,11110,1,"<color=#00ff00>找<npc=2,大法师>复命 </color>",找NPC提交,2,36,125
+26,<color=#FFFF00>内奸</color>,无,,,根据其它任务自动,25,,"消灭<color=#00ff00>南贫瘠的<conquer=11210,野猪人></color>",征战,11210,1,"<color=#00ff00>找<npc=3,牛头人酋长>复命 </color>",找NPC提交,3,37,126
+27,<color=#FFFF00>摩拉迪姆</color>,无,,,根据其它任务自动,26,,"安息<color=#00ff00>摩拉迪姆的<conquer=11310,灵魂></color>",征战,11310,1,"<color=#00ff00>找<npc=4,黑暗游侠>复命 </color>",找NPC提交,4,38,127
+28,<color=#FFFF00>大地的震颤</color>,无,,,根据其它任务自动,27,,"干掉<color=#00ff00>峡谷的<conquer=11410,黑龙></color>",征战,11410,1,"<color=#00ff00>找<npc=2,大法师>复命 </color>",找NPC提交,2,39,128
+29,<color=#FFFF00>瓶中信</color>,无,,,根据其它任务自动,28,,"消灭<color=#00ff00>荆棘谷的<conquer=11510,穆克拉></color>",征战,11510,1,"<color=#00ff00>找<npc=3,牛头人酋长>复命 </color>",找NPC提交,3,40,129
+30,<color=#FFFF00>谢申克的救赎</color>,无,,,根据其它任务自动,29,,"找到<color=#00ff00>谢申克的<conquer=11610,物资></color>",征战,11610,1,"<color=#00ff00>找<npc=5,山丘之王>复命 </color>",找NPC提交,5,41,130
+31,<color=#FFFF00>贪婪的血爪</color>,无,,,根据其它任务自动,30,,"杀死<color=#00ff00>尘泥的<conquer=11710,血爪></color>",征战,11710,1,"<color=#00ff00>找<npc=3,牛头人酋长>复命 </color>",找NPC提交,3,42,131
+32,<color=#FFFF00>贱民的指引</color>,无,,,根据其它任务自动,31,,"消灭<color=#00ff00>凄凉的<conquer=11810,半人马酋长></color>",征战,11810,1,"<color=#00ff00>找<npc=3,牛头人酋长>复命 </color>",找NPC提交,3,43,132
+33,<color=#FFFF00>大地公主</color>,无,,,根据其它任务自动,32,,"杀死<color=#00ff00>高地的<conquer=11910,密斯莱尔公主></color>",征战,11910,1,"<color=#00ff00>找<npc=4,黑暗游侠>复命 </color>",找NPC提交,4,44,133
+34,<color=#FFFF00>最后的心愿</color>,无,,,根据其它任务自动,33,,"杀死<color=#00ff00>悲伤的<conquer=12010,暮牙></color>",征战,12010,1,"<color=#00ff00>找<npc=6,荆棘谷猎手>复命 </color>",找NPC提交,6,45,134
+35,<color=#FFFF00>痛苦深渊</color>,无,,,根据其它任务自动,34,,"消灭<color=#00ff00>痛苦深渊的<conquer=12110,异种蜂></color>",征战,12110,1,"<color=#00ff00>找<npc=6,荆棘谷猎手>复命 </color>",找NPC提交,6,46,133
+36,<color=#FFFF00>复活吧，奥比斯顿！</color>,无,,,根据其它任务自动,35,,"杀死<color=#00ff00>峡谷的<conquer=12210,奥比斯顿></color>",征战,12210,1,"<color=#00ff00>找<npc=1,摄政王>复命 </color>",找NPC提交,1,47,134
+

@@ -1,0 +1,1 @@
+..\NovaDeployC.exe type=recvApp addr=http://localhost:3344/

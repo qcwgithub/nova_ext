@@ -1,0 +1,4 @@
+Table:CsvModelActParams,,,,,,,
+tid,name:s,run2target_time,run_return_time,reborn_delay,hurt_flash_time,blink2target_time,blink_return_time
+# 直接使用对应的模型 tid,模型名字,前冲时长,回退时长,重生延迟,受创闪白时长,前闪时长,闪回时长
+9,山丘之王,200,1000,,,,

@@ -1,0 +1,10 @@
+Table:CsvMotionSpeed,,,,
+tid,name:s,modelTid,motionName:s,speedDelta:f
+#,名字,model表Tid,动作名,速度增量
+1,法师攻击1,2,gongji01A,0.4
+2,法师攻击1,2,gongji01B,0.4
+3,月之女祭司攻击2,1,gongji02A,0.6
+4,月之女祭司攻击2,1,gongji02B,0.6
+5,月之女祭司攻击1,1,gongji01A,0.15
+6,月之女祭司攻击1,1,gongji01B,0.15
+7,地狱咆哮攻击2,93,gongji02B,-0.2

@@ -59,7 +59,14 @@ namespace DebugTool
                                 }
                             }).ToArray();
 
-                            result.Add(thread.ManagedThreadId, stacks);
+
+                            string[] locals = thread.EnumerateStackObjects(false).Select((clrRoot) => {
+                                return clrRoot.ToString() + "/" + clrRoot.Name + "/" + clrRoot.Type;
+                            }).ToArray();
+
+                            result.Add(thread.ManagedThreadId, stacks.Concat(locals).ToArray());
+
+                            
                         }
                     }
                 }

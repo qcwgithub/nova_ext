@@ -1,0 +1,5 @@
+Table:CsvAwardRetriever,,,,,,,,,,,
+tid,name:s,title:s,type:AwardRetrieverType,time:s,nor_retrieve,nor_para:a,sup_retrieve,sup_para:a,sup_desc:s,vip_limit,level_limit
+#,名字,标题,任务类型,截止日期描述,普通寻回消耗,普通寻回参数,至尊寻回消耗,至尊寻回参数,至尊寻回说明,至尊寻回vip等级限制,等级限制
+1,黑暗军团入侵,黑暗军团入侵奖励,世界BOSS,今日晚8点,50,"110000,110000",200,"200000,200000",寻回全额奖励,2,20
+2,答题有奖,答题奖励,答题,明日凌晨5点,50,3,200,5,寻回全额奖励,2,

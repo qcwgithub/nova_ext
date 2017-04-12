@@ -1,0 +1,11 @@
+{
+  "computers": 
+    [
+      {
+        "name": "localhost",
+        "url": "http://localhost:3344/",
+        "cntr": true,
+        "serverNames": ["srv1","srv2"]
+      }
+    ]
+}

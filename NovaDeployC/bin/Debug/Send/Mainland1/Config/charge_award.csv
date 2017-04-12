@@ -1,0 +1,12 @@
+Table:CsvChargeAward,,,,,,,,,,,,,
+tid,name:s,sort,charge_type:ChargeType,itemNum,firstChargeNum,activityAddNum,card_award,costRMB,getVIPExp,icon:s,bg:s,discount_text:s,can_buy:b
+#,名字,排序（越小越靠前，仅显示用）,类型,奖励钻石数量,首充额外奖励数量,活动额外奖励数量,月卡每日获得,人民币(元),VIP经验,钻石图标id,,优惠描述,是否可以购买（只有月卡生效）
+1,20000钻石,3,充值,20000,,7000,,2000,20000,chongzhi_zuanshi_07,,赠送35%,
+2,10000钻石,4,充值,10000,,3200,,1000,10000,chongzhi_zuanshi_06,,赠送32%,
+3,5000钻石,5,充值,5000,13000,1500,,500,5000,chongzhi_zuanshi_05,,赠送30%,
+4,2000钻石,6,充值,2000,4800,400,,200,2000,chongzhi_zuanshi_04,,赠送20%,
+5,1000钻石,7,充值,1000,2100,50,,100,1000,chongzhi_zuanshi_03,,赠送5%,
+6,500钻石,8,充值,500,1020,10,,50,500,chongzhi_zuanshi_02,,赠送2%,
+7,100钻石,9,充值,100,200,0,,10,100,chongzhi_zuanshi_01,,,
+8,30元月卡,1,月卡,300,,,100,30,300,chongzhi_yueka_02,fuli_yueka_03,推荐,是
+9,90元月卡,2,月卡,900,,,300,90,900,chongzhi_yueka_02,fuli_yueka_06,推荐,是

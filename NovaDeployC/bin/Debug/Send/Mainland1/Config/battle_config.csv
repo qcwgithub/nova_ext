@@ -1,0 +1,3 @@
+Table:CsvBattleConfig,,,,,,,,
+tid,name:s,commanderTid,heroTid1,heroTid2,heroTid3,heroTid4,heroTid5,heroTid6
+10101,战斗1,1,1105,,,,,

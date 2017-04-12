@@ -1,0 +1,41 @@
+"Table:CsvDailyTask",,,,,,
+"tid","name:s","show_order","type:DailyTaskType","count","credits","icon_path:s"
+"#","名字","显示排序","任务类型","完成数量","所得积分","图标路径"
+1,"通关征战20次",1,"征战",20,10,"DailyTask/rcrw_maoxian"
+2,"通关战役2次",2,"战役",2,10,"DailyTask/rcrw_fuben"
+3,"强化装备3次",3,"强化装备",3,10,"DailyTask/rcrw_qianghua"
+4,"抽将3次",4,"英雄招募",3,10,"DailyTask/rcrw_zhaohuan"
+5,"竞技胜利3次",5,"竞技场胜利",3,10,"DailyTask/rcrw_jingjichang"
+6,"祭祀2次",7,"祭祀",2,10,"DailyTask/rcrw_jisi"
+7,"刷新神秘商店2次",9,"刷新神秘商店",2,10,"DailyTask/rcrw_shenmishangdian"
+8,"抵御黑暗军团入侵",6,"世界BOSS战斗",1,10,"DailyTask/rcrw_shijieboss"
+9,"提升英雄好感3次",8,"提升英雄好感度",3,10,"DailyTask/rcrw_haogan"
+10,"给任意玩家送花1次",10,"送花",1,10,"DailyTask/rcrw_songhua"
+11,"攻打英雄远征5次",5,"英雄远征",5,10,"DailyTask/rcrw_yuanzheng"
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+"Table:CsvDailyTaskAward",,,,,,
+"tid","name:s","credits","award",,,
+"#","名字","积分数","奖励 id",,,
+1,"10 积分奖励",10,1001,,,
+2,"40 积分奖励",40,1002,,,
+3,"70 积分奖励",70,1003,,,
+4,"100 积分奖励",100,1004,,,

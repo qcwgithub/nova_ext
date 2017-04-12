@@ -1,0 +1,6 @@
+Table:CsvEatChicken,,,
+tid,begin_hour,end_hour,physic_power
+#,开始时间,结束时间,奖励体力
+1,12,14,60
+2,18,20,60
+3,21,23,60

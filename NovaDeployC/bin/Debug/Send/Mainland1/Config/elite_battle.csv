@@ -1,0 +1,17 @@
+Table:CsvEliteBattle,,,,,,,
+tid,name:s,level,round,drop_group,model_tid,is_bulletin:b,map:s
+#,名称,等级,回合数,掉落组,显示模型tid,是否通报,地图预制名
+80101,死亡矿井,50,12,751,75,1,JingJiChang
+80201,影牙城堡,55,12,752,39,1,JingJiChang
+80301,哀嚎洞穴,60,12,753,85,1,JingJiChang
+80401,黑暗深渊,65,12,754,105,1,JingJiChang
+80501,血色修道院,70,12,755,12,1,JingJiChang
+80601,剃刀高地,75,12,756,151,1,JingJiChang
+80701,造物者遗迹,80,12,757,86,1,JingJiChang
+80801,祖尔法拉克,85,12,758,105,1,JingJiChang
+80901,玛拉顿,90,12,759,29,,JingJiChang
+81001,阿塔哈卡神庙,95,12,760,30,,JingJiChang
+81101,黑石,100,12,761,19,,JingJiChang
+81201,厄运之槌,105,12,762,211,,JingJiChang
+81301,通灵学院,110,12,763,104,,JingJiChang
+81401,斯坦索姆,115,12,764,137,,JingJiChang

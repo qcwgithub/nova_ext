@@ -1,0 +1,14 @@
+"Table:CsvExpeditionReset",,,
+"tid","reset_times","cost_diamond","vip_limit"
+"#远征每一次重置的花费",,,
+"#","重置次数","钻石花费","VIP等级限制"
+1,1,0,0
+2,2,200,4
+3,3,500,7
+,,,
+"Table:CsvExpeditionBuyTime",,,
+"tid","cost",,
+"#购买远征挑战次数花费(大于3的都取3)","第一次购买一次挑战次数花费",,
+1,50,,
+2,80,,
+3,100,,

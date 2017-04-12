@@ -1,0 +1,4 @@
+﻿void init(NovaServer srv)
+{
+    LoginManager.ServerReady = true;
+}

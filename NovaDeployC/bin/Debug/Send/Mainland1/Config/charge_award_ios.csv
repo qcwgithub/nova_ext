@@ -1,0 +1,11 @@
+Table:CsvChargeAwardIOS,,,,,,,,,,,,,,,
+tid,tier,name:s,sort,charge_type:ChargeType,itemNum,firstChargeNum,activityAddNum,card_award,costRMB,getVIPExp,icon:s,bg:s,discount_text:s,can_buy:b,product:s
+#,价格等级,名字,排序（越小越靠前，仅显示用）,类型,奖励钻石数量,首充额外奖励数量,活动额外奖励数量,月卡每日获得,人民币(元),VIP经验,钻石图标id,,优惠描述,是否可以购买（只有月卡生效）,产品ID
+1,60,6480钻石,3,充值,6480,16848,1944,,648,6480,chongzhi_zuanshi_06,,赠送30%,,com.xxbl.anzhi.p5
+2,50,3280钻石,4,充值,3280,8200,820,,328,3280,chongzhi_zuanshi_05,,赠送25%,,com.xxbl.anzhi.p4
+3,30,1980钻石,5,充值,1980,4752,396,,198,1980,chongzhi_zuanshi_04,,赠送20%,,com.xxbl.anzhi.p3
+4,15,980钻石,6,充值,980,2058,49,,98,980,chongzhi_zuanshi_03,,赠送5%,,com.xxbl.anzhi.p2
+5,5,300钻石,7,充值,300,600,0,,30,300,chongzhi_zuanshi_02,,,,com.xxbl.anzhi.p1
+6,1,60钻石,8,充值,60,120,0,,6,60,chongzhi_zuanshi_01,,,,com.xxbl.anzhi.p0
+7,5,30元月卡,1,月卡,300,,,100,30,300,chongzhi_yueka_02,fuli_yueka_03,推荐,是,com.xxbl.anzhi.p6
+8,15,98元月卡,2,月卡,980,,,300,98,980,chongzhi_yueka_02,fuli_yueka_06,推荐,是,com.xxbl.anzhi.p7

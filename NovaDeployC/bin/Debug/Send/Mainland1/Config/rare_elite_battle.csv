@@ -1,0 +1,34 @@
+Table:CsvRareEliteBattle,,,,
+tid,name:s,finder_drop_group,kill_drop_group,map:s
+#,Boss名称,发现者奖励,击杀者奖励,地图预制名
+# ABBCC,,,,
+# A： 10 表示稀有精英,,,,
+# BB：表示第几张冒险地图,,,,
+# CC：表示第几个稀有精英，因为一个冒险地图可对应多个稀有精英，从中随机抽取一个触发,,,,
+100701,斯纳弗莱尔,901,951,ChiJiShan
+100801,埃卡洛姆,902,952,HuiGu
+100901,米尔洛,903,953,ShiDi
+101001,毒针雷萨恩,904,954,WenYiZhiDi
+101101,阿拉加,905,955,XierSiBuLaDeQiuLing
+101201,休玛,906,956,PinJiZhiDi
+101301,鲁伯斯,907,957,WenYiZhiDi
+101401,断牙,908,958,HuangWuZhiDi
+101501,金鳞蜥蜴,909,959,JingJiGu
+101601,塔纳利斯之魂,910,960,TaNaLiSi
+101701,布雷姆戈,911,961,ChenNiZhaoZe
+101801,凯雷恩王子,912,962,QiLiangZhiDi
+101901,纳兹加克王子,913,963,ALaXi
+102001,维尔玛克将军,914,964,ChenNiZhaoZe
+102101,锋爪,915,965,XinTeLan
+102201,斯莫达尔,916,966,HeiShiShenYuan
+102301,菲达雷德,917,967,AiSaLa
+102401,睡梦守卫弗克托,918,968,HeiHaiAn
+102501,暴躁的本希,919,969,XierSiBuLaDeQiuLing
+102601,普特迪乌斯,920,970,WenYiZhiDi
+102701,乌卡洛克,921,971,HeiHaiAn
+102801,僵硬的吉斯,922,972,WenYiZhiDi
+102901,莫戈雷,923,973,HeiHaiAn
+103001,瑞格雷沃公爵,924,974,WenYiZhiDi
+103101,赫达琳,925,975,WenYiZhiDi
+103201,沃尔查,926,976,HeiShiShenYuan
+103301,克里拉克,927,977,HuangWuZhiDi

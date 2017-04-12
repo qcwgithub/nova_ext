@@ -1,0 +1,21 @@
+Table:CsvCollection,,,,,,,,,
+tid,name:s,icon_path:s,level_need,hero_lv_need,time,f#must_para1,f#must_para2,f#must_para3,maybe_group
+#,采集地图名称,采集图标,指挥官等级需求,英雄等级需求,采集时间（分）,必得经验参数1 公式：a*lv^2+b*lv+c,必得经验参数2,必得经验参数3,可能得物品掉落组
+1,闪金森林,Collection/cj_tubiao_aierwen,58,58,30,,,90,20
+2,西部荒野,Collection/cj_tubiao_xibuhuangye,58,58,120,,,290,21
+3,银松森林,Collection/cj_tubiao_yinsongsenlin,58,58,600,,,900,22
+4,黑海岸,Collection/cj_tubiao_heihaian,63,63,240,,,560,23
+5,北贫瘠之地,Collection/cj_tubiao_beipinjizhidi,63,63,480,,,860,24
+6,赤脊山,Collection/cj_tubiao_chijishan,63,63,60,,,170,25
+7,灰谷森林,Collection/cj_tubiao_huigu,68,68,540,,,960,26
+8,湿地,Collection/cj_tubiao_shidi,68,68,90,,,260,27
+9,荒芜之地,Collection/cj_tubiao_huangwuzhidi,68,68,300,,,710,28
+10,荆棘谷,Collection/cj_tubiao_jingjigu,73,73,30,,,110,29
+11,悲伤沼泽,Collection/cj_tubiao_beishangzhaoze,73,73,120,,,370,30
+12,辛特兰,Collection/cj_tubiao_xintelan,73,73,480,,,980,31
+13,阿拉希,Collection/cj_tubiao_alaxi,78,78,240,,,690,32
+14,艾萨拉,Collection/cj_tubiao_aisala,78,78,480,,,1050,33
+15,费伍德森林,Collection/cj_tubiao_feiwudesenlin,78,78,90,,,300,34
+,,,,,,,,,
+#,rogue_probability,,,,,,,,
+#,盗贼发生概率,,,,,,,,

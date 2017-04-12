@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A700C25-7177-4C71-83D1-20C321F07B76}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NovaDeployC</RootNamespace>
+    <AssemblyName>NovaDeployC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Args.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="RecvApp\RecvItem.cs" />
+    <Compile Include="SendApp\Commands\ReplaceFileCommand.cs" />
+    <Compile Include="SendApp\Commands\UnzipCommand.cs" />
+    <Compile Include="Coroutine\Coroutine.cs" />
+    <Compile Include="Coroutine\CoroutineManager.cs" />
+    <Compile Include="Coroutine\CoroutineWaiter.cs" />
+    <Compile Include="Coroutine\EventWaiter.cs" />
+    <Compile Include="Coroutine\FrameWaiter.cs" />
+    <Compile Include="Coroutine\ICoroutine.cs" />
+    <Compile Include="Coroutine\ConditionWaiter.cs" />
+    <Compile Include="Coroutine\TimeWaiter.cs" />
+    <Compile Include="Coroutine\YieldOp.cs" />
+    <Compile Include="Json\AOTSafe.cs" />
+    <Compile Include="Json\JsonFx.Json\About.cs" />
+    <Compile Include="Json\JsonFx.Json\DataReaderProvider.cs" />
+    <Compile Include="Json\JsonFx.Json\DataWriterProvider.cs" />
+    <Compile Include="Json\JsonFx.Json\EcmaScriptIdentifier.cs" />
+    <Compile Include="Json\JsonFx.Json\EcmaScriptWriter.cs" />
+    <Compile Include="Json\JsonFx.Json\IDataReader.cs" />
+    <Compile Include="Json\JsonFx.Json\IDataWriter.cs" />
+    <Compile Include="Json\JsonFx.Json\IJsonSerializable.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonDataReader.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonDataWriter.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonIgnoreAttribute.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonNameAttribute.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonReader.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonReaderSettings.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonSerializationException.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonSpecifiedPropertyAttribute.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonToken.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonWriter.cs" />
+    <Compile Include="Json\JsonFx.Json\JsonWriterSettings.cs" />
+    <Compile Include="Json\JsonFx.Json\TypeCoercionUtility.cs" />
+    <Compile Include="Json\JsonFx.Json\XmlDataReader.cs" />
+    <Compile Include="Json\JsonFx.Json\XmlDataWriter.cs" />
+    <Compile Include="Json\Nova_FixCtorNotFoundException.cs" />
+    <Compile Include="RecvApp\RecvApp.cs" />
+    <Compile Include="SendApp\Commands\Command.cs" />
+    <Compile Include="RecvApp\HttpRecv.cs" />
+    <Compile Include="SendApp\SendApp.cs" />
+    <Compile Include="SendApp\HttpSend.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendApp\ComputerConfig.cs" />
+    <Compile Include="Tool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Json\Json.csproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

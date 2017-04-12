@@ -1,0 +1,9 @@
+Table:CsvAdventure,,
+tid,type:AdventureType,award
+#冒险battle表id,奇遇类型,奇遇奖励
+#,天降宝物,掉落id
+#,限时商店,填1
+#,偶遇福利,OccasionalWelfare表id
+10205,天降宝物,201
+10401,限时商店,1
+10502,偶遇福利,10001
