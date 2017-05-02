@@ -18,5 +18,6 @@ REM ..\NovaDeployC.exe type=sendApp cfg=wdjSettings.txt action=copyFile file=act
 REM 以下这句，把当前目录下的Mainland1目录得到到srv1所在电脑的RecvApp所在目录下的Mainland1目录
 REM ..\NovaDeployC.exe type=sendApp cfg=wdjSettings.txt action=copyDir dir=Mainland1 targetServers=srv1 targetDir=Mainland1
 
-echo 77777777
-pause
+REM echo 77777777
+REM pause
+

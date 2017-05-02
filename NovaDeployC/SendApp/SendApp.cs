@@ -150,22 +150,95 @@ namespace NovaDeployC.SendApp
                 if (h.IsFail)
                 {
                     Console.WriteLine("失败, message: " + h.FailedMessage);
-                    failed = true;
+                    setFailed();
                 }
                 else
                 {
                     if (!h.Result.StartsWith("OK"))
                     {
                         Console.WriteLine("失败, message: " + h.Result);
-                        failed = true;
+                        setFailed();
                     }
                     else
                     {
+                        setSuccess();
                         Console.WriteLine(h.Result);
                     }
                 }
 
-                if (failed)
+                if (failed())
+                {
+                    Console.WriteLine("}");
+                    yield break;
+                }
+            }
+
+            Console.WriteLine("}");
+            yield break;
+        }
+        IEnumerator doBuildBridgeProj(string action)
+        {
+            Console.WriteLine(action);
+            Console.WriteLine("{");
+
+            var dict = ParseTargetServers(args.Get("targetServers"));
+
+            //// 2
+            var cmd = args.Get("cmd");
+            var _args = args.Get("args");
+
+            foreach (var kv in dict)
+            {
+                var computer = kv.Key;
+                Console.Write(string.Format("    {0}: 执行命令 {1} {2}... ", computer.url, cmd.Replace('@', ' '), _args.Replace('@', ' ')));
+
+                Dictionary<string, string> headers = new Dictionary<string, string>();
+                headers.Add("action", action);
+                headers.Add("cmd", cmd);
+                headers.Add("args", _args);
+                HttpSend h = new HttpSend(computer.url, headers, new byte[0]);
+
+                while (!h.IsEnd)
+                    yield return null;
+
+                if (h.IsFail)
+                {
+                    Console.WriteLine("失败, message: " + h.FailedMessage);
+                    setFailed();
+                }
+                else
+                {
+                    //string reBase64 = h.Result;
+                    //byte[] reBytes = Convert.FromBase64String(reBase64);
+                    //string reUtf8 = Encoding.UTF8.GetString(reBytes);
+
+                    //if (h.Result.Contains(": error"))
+
+                    var r = JsonFx.Json.JsonReader.Deserialize<NovaDeployC.BuildBridgeResult>(h.Result);
+                    if (r == null)
+                    {
+                        Console.WriteLine("失败, r==null");
+                        setFailed();
+                    }
+                    else
+                    {
+                        if (!r.ok)
+                        {
+                            Console.WriteLine("失败, !r.ok");
+                            setFailed();
+                        }
+                        byte[] logBytes = Convert.FromBase64String(r.buildLogBase64);
+                        File.WriteAllBytes("msbuild.log", logBytes);
+                        Console.WriteLine(File.ReadAllText("msbuild.log"));
+                        if (r.ok)
+                        {
+                            File.WriteAllBytes("..\\Bridge\\output\\BridgeProj.js", Convert.FromBase64String(r.javascriptBase64));
+                            setSuccess();
+                        }
+                    }
+                }
+
+                if (failed())
                 {
                     Console.WriteLine("}");
                     yield break;
@@ -221,22 +294,23 @@ namespace NovaDeployC.SendApp
                 if (h.IsFail)
                 {
                     Console.WriteLine("失败, message: " + h.FailedMessage);
-                    failed = true;
+                    setFailed();
                 }
                 else
                 {
                     if (!h.Result.StartsWith("OK"))
                     {
                         Console.WriteLine("失败, message: " + h.Result);
-                        failed = true;
+                        setFailed();
                     }
                     else
                     {
+                        setSuccess();
                         Console.WriteLine(h.Result);
                     }
                 }
 
-                if (failed)
+                if (failed())
                 {
                     Console.WriteLine("}");
                     yield break;
@@ -246,9 +320,6 @@ namespace NovaDeployC.SendApp
             yield break;
         }
         #endregion
-
-        bool failed = false;
-
         IEnumerator Executer()
         {
             string action = args.Get("action");
@@ -266,12 +337,18 @@ namespace NovaDeployC.SendApp
                     }
                     break;
 
+                case "buildBridgeProj":
+                    {
+                        yield return cMgr.Start(doBuildBridgeProj(action));
+                    }
+                    break;
+
                 default:
                     throw new Exception("Unknown action="+action);
             }
 
             Console.WriteLine();
-            Console.WriteLine(failed?"failed":"finished");
+            Console.WriteLine(failed()?"failed":"finished");
         }
 
         void Loop()
@@ -280,13 +357,21 @@ namespace NovaDeployC.SendApp
             {
                 cMgr.OnTimeElapsed(30);
                 System.Threading.Thread.Sleep(30);
+                if (state != -1)
+                    break;
             }
         }
+        int state = -1;
 
-        public void Start()
+        bool failed() { return state == 1; }
+        void setFailed() { state = 1; }
+        void setSuccess() { state = 0; }
+
+        public int Start()
         {
             cMgr.Start(Executer());
             Loop();
+            return state;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace NovaDeployC.RecvApp
 {
@@ -64,7 +65,8 @@ namespace NovaDeployC.RecvApp
                 foreach (var f in targetFiles)
                 {
                     Console.WriteLine("    writeFile "+f);
-                    Directory.CreateDirectory(Path.GetDirectoryName(f));
+                    if (f.Contains('\\')||f.Contains('/'))
+                        Directory.CreateDirectory(Path.GetDirectoryName(f));
                     File.WriteAllBytes(f, item.data);
                 }
 
@@ -73,6 +75,56 @@ namespace NovaDeployC.RecvApp
             }
             catch (Exception ex)
             {
+                return ex.Message;
+            }
+        }
+
+        string BuildBridgeProj(RecvItem item)
+        {
+            try
+            {
+                string action = item.headers["action"];
+                string cmd = item.headers["cmd"].Replace('@', ' ');
+                string args = item.headers["args"].Replace('@', ' ');
+
+
+                Console.WriteLine(action);
+                Console.WriteLine("{");
+
+                Console.WriteLine("  {0}:{1} {2}", action, cmd, args);
+
+
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = cmd;
+                psi.Arguments = args;
+                psi.UseShellExecute = false;
+                psi.CreateNoWindow = false;
+                //psi.WorkingDirectory = Directory.GetCurrentDirectory();
+
+                var pro = new Process();
+                pro.StartInfo = psi;
+                pro.Start();
+                pro.WaitForExit();
+                int ret = pro.ExitCode;
+                pro.Close();
+
+                Console.WriteLine("ExitCode=" + ret);
+
+                NovaDeployC.BuildBridgeResult r = new BuildBridgeResult();
+                r.ok = (ret == 0);
+                r.buildLogBase64 = Convert.ToBase64String(File.ReadAllBytes("msbuild.log"));
+                if (r.ok)
+                    r.javascriptBase64 = Convert.ToBase64String(File.ReadAllBytes("..\\Bridge\\output\\BridgeProj.js"));
+                else
+                    r.javascriptBase64 = "";
+                string re = JsonFx.Json.JsonWriter.Serialize(r);
+
+                Console.WriteLine("}");
+                return re;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
                 return ex.Message;
             }
         }
@@ -102,6 +154,10 @@ namespace NovaDeployC.RecvApp
 
                 foreach (var f in targetDirs)
                 {
+                    if (Directory.Exists(f))
+                        Directory.Delete(f);
+                    Directory.CreateDirectory(f);
+
                     Console.Write("    解压 " + zipPath + " -> " + f + " ... ");
                     Tool.Unzip(zipPath, f);
                     Console.WriteLine("完成");
@@ -161,6 +217,8 @@ namespace NovaDeployC.RecvApp
                     return CopyFile(item);
                 case "copyDir":
                     return CopyDir(item);
+                case "buildBridgeProj":
+                    return BuildBridgeProj(item);
                 //case "setReady":
                 //    return ModifyText(item);
             }

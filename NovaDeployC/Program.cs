@@ -9,13 +9,13 @@ namespace NovaDeployC
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             Args kArgs = new Args(args);
             if (kArgs.Get("type") == "sendApp")
             {
                 var app = SendApp.SendApp.CreateFromArgs(kArgs);
-                app.Start();
+                return app.Start();
             }
             else if (kArgs.Get("type") == "recvApp")
             {
@@ -30,6 +30,7 @@ namespace NovaDeployC
             //Console.ReadLine();
 
             //SendApp.ComputerConfig.SaveLocalSettings("localSettings.txt");
+            return 0;
         }
     }
 }

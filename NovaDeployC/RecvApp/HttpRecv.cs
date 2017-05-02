@@ -124,6 +124,7 @@ namespace NovaDeployC.RecvApp
             finally
             {
                 // 处理一单紧接着下一单
+                Console.WriteLine("Wait next command...");
                 listener.BeginGetContext(new AsyncCallback(ListenerCallback), listener);
             }
         }
