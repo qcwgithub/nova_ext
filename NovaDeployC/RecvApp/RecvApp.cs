@@ -155,7 +155,12 @@ namespace NovaDeployC.RecvApp
                 foreach (var f in targetDirs)
                 {
                     if (Directory.Exists(f))
-                        Directory.Delete(f);
+                    {
+                        string[] files=Directory.GetFiles(f, "*.*", SearchOption.AllDirectories);
+                        foreach (var file in files)
+                            File.Delete(file);
+                        //Directory.Delete(f);
+                    }
                     Directory.CreateDirectory(f);
 
                     Console.Write("    解压 " + zipPath + " -> " + f + " ... ");
