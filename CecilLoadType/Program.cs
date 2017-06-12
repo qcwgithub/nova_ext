@@ -40,7 +40,8 @@ namespace CecilLoadType
             return fieldType.FullName == "System.Int32" ||
                     fieldType.FullName == "System.String" ||
                     fieldType.FullName == "System.Boolean" ||
-                    fieldType.FullName == "UnityEngine.GameObject";
+                    //fieldType.FullName == "UnityEngine.GameObject";
+                    fieldType.FullName.StartsWith("UnityEngine.");
         }
 
         static bool CheckFieldAttr(FieldDefinition field)
@@ -176,6 +177,58 @@ namespace CecilLoadType
             }
         }
 
+        static List<char> temp = new List<char>();
+        static string n2GTs(int n)
+        {
+            temp.Clear();
+            for (int i=0;i<n;i++)
+            {
+                temp.Add((char)((int)'A' + i));
+            }
+            return string.Join(",", temp.Select(_c => _c.ToString()).ToArray());
+        }
+        static void FindAllBridgeTypes(string dllPath, string outputPath)
+        {
+            //Creates an AssemblyDefinition from the "MyLibrary.dll" assembly
+            AssemblyDefinition myLibrary = AssemblyDefinition.ReadAssembly(dllPath);
+
+            Dictionary<string, List<string>> d = new Dictionary<string, List<string>>();
+            //Gets all types which are declared in the Main Module of "MyLibrary.dll"
+            foreach (TypeDefinition type in myLibrary.MainModule.Types)
+            {
+                string ns = type.Namespace;
+                if (string.IsNullOrEmpty(ns) || (ns!="System"&&!ns.StartsWith("System.")))
+                    continue;
+                if (!d.ContainsKey(ns))
+                    d.Add(ns, new List<string>());
+
+                string fn = type.FullName.Substring(ns.Length+1);
+                if (fn.Contains('`'))
+                {
+                    int i=fn.LastIndexOf('`');
+                    string cstr = fn.Substring(i + 1);
+                    int c = int.Parse(cstr);
+                    fn = fn.Substring(0, i) + "<" + n2GTs(c) + ">";
+                }
+
+                d[ns].Add(fn);
+            }
+
+            StringBuilder sb = new StringBuilder();
+            foreach(var kv in d)
+            {
+                sb.AppendLine("[" + kv.Key + "]");
+
+                kv.Value.Sort((_a, _b) => string.Compare(_a, _b));
+
+                foreach(var fn in kv.Value)
+                    sb.AppendLine(fn);
+                sb.AppendLine();
+            }
+
+            System.IO.File.WriteAllText(outputPath, sb.ToString());
+        }
+
         static void Main(string[] args)
         {
             string op = args[0];
@@ -186,6 +239,10 @@ namespace CecilLoadType
             else if (op == "CheckTypePublicMethod")
             {
                 CheckTypeClickMethod(args[1], args[2], args[3], args[4]);
+            }
+            else if (op == "FindAllBridgeTypes")
+            {
+                FindAllBridgeTypes(args[1], args[2]);
             }
         }
     }
